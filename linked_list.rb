@@ -101,7 +101,8 @@ class LinkedList
   end
 
   def insert_at(value, index)
-
+    temp_node = at(index)
+    temp_node.next_node = Node.new(value, temp_node.next_node)
   end
 end
 
@@ -132,5 +133,9 @@ list.append('Angelica')
 
 # list.pop
 # p list
+
+p list.to_s
+
+list.insert_at('Bob', 2)
 
 p list.to_s

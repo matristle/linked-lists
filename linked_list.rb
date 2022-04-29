@@ -24,7 +24,7 @@ class LinkedList
 
     def size
         temp_node = @head
-        count = 1
+        count = 0
 
         until temp_node.nil? do
             count += 1
@@ -70,12 +70,13 @@ list.append('Angelica')
 
 # p list
 
-# p list.size
+p list.size
 # p list.tail
 
-list.size.times do |index| 
-    p list.at(index)
-end
+# list.size.times do |index| 
+#     p list.at(index)
+# end
 
+p list
 
 

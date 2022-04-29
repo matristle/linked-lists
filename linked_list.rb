@@ -6,22 +6,15 @@ class LinkedList
         @head = head
     end
 
+    def append(value)
+        temp_node = @head
+
+        until temp_node.next_node.nil? do
+            temp_node = temp_node.next_node
+        end 
+
+        temp_node.next_node = Node.new(value, nil)
+    end
+
     
 end
-
-list = LinkedList.new
-
-list.prepend('Sally')
-list.prepend('Sunny')
-list.prepend('Theo')
-
-list.append('Angelica')
-
-p list.size
-p list
-
-p list.tail
-
-
-
-

@@ -51,14 +51,14 @@ class LinkedList
     def at(index)
         temp_node = @head
 
-        (index + 1).times do 
+        index.times do 
             temp_node = temp_node.next_node
         end
 
         temp_node
     end
 
-    
+       
 end
 
 list = LinkedList.new
@@ -68,10 +68,14 @@ list.prepend('Sunny')
 list.prepend('Theo')
 list.append('Angelica')
 
-p list
+# p list
 
-p list.size
+# p list.size
 # p list.tail
+
 list.size.times do |index| 
     p list.at(index)
 end
+
+
+

@@ -58,6 +58,20 @@ class LinkedList
         temp_node
     end
 
+    def pop
+        temp_node = @head
+        until temp_node.next_node.next_node.nil?
+            temp_node = temp_node.next_node
+            if temp_node.next_node.next_node.nil?
+                temp_node.next_node = nil
+                break
+            end
+        end
+
+        # head.next_node.next_node.next_node = nil
+
+    end 
+
     def contains?(value)
         temp_node = @head
 
@@ -107,14 +121,12 @@ list.prepend('Theo')
 list.append('Angelica')
 
 # p list
-
 # p list.size
 # p list.tail
 
 # list.size.times do |index| 
 #     p list.at(index)
 # end
-
 # p list
 
 # p list.contains?('Theo')
@@ -122,6 +134,7 @@ list.append('Angelica')
 
 # p list.find('Angelica')
 
-p list.to_s
+# p list.to_s
 
-
+list.pop
+p list

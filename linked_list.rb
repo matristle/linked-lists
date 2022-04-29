@@ -91,7 +91,7 @@ class LinkedList
     string = String.new
 
     (size + 1).times do |index|
-      string << if index == size 
+      string << if index == size
                   'nil'
                 else
                   "( #{at(index).value} ) -> "
@@ -105,7 +105,7 @@ class LinkedList
     temp_node.next_node = Node.new(value, temp_node.next_node)
   end
 
-  def remove_at(value, index)
+  def remove_at(index)
     previous_node = at(index - 1)
     current_node = at(index)
 
@@ -122,24 +122,24 @@ list.prepend('Sunny')
 list.prepend('Theo')
 list.append('Angelica')
 
-# p list
-# p list.size
-# p list.tail
+p list
+p list.size
+p list.tail
 
-# list.size.times do |index|
-#   p list.at(index)
-# end
-# p list
+list.size.times do |index|
+  p list.at(index)
+end
+p list
 
-# p list.contains?('Theo')
-# p list.contains?('Chloe')
+p list.contains?('Theo')
+p list.contains?('Chloe')
 
-# p list.find('Angelica')
+p list.find('Angelica')
 
-# p list.to_s
+p list.to_s
 
-# list.pop
-# p list
+list.pop
+p list
 
 p list.to_s
 

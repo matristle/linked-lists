@@ -59,7 +59,7 @@ class LinkedList
     end
 
     def contains?(value)
-        temp_node = head
+        temp_node = @head
 
         self.size.times do
             if temp_node.value == value
@@ -70,6 +70,19 @@ class LinkedList
         end
 
         return false
+    end
+
+    def find(value)
+        temp_node = @head
+        self.size.times do |index|
+            if temp_node.value == value
+                return index
+                break
+            end 
+            temp_node = temp_node.next_node
+        end
+
+        return nil
     end
 
        
@@ -93,7 +106,9 @@ p list.size
 
 p list
 
-p list.contains?('Theo')
-p list.contains?('Chloe')
+# p list.contains?('Theo')
+# p list.contains?('Chloe')
+
+p list.find('Angelica')
 
 

@@ -58,6 +58,20 @@ class LinkedList
         temp_node
     end
 
+    def contains?(value)
+        temp_node = head
+
+        self.size.times do
+            if temp_node.value == value
+                return true
+                break
+            end 
+            temp_node = temp_node.next_node
+        end
+
+        return false
+    end
+
        
 end
 
@@ -78,5 +92,8 @@ p list.size
 # end
 
 p list
+
+p list.contains?('Theo')
+p list.contains?('Chloe')
 
 

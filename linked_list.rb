@@ -90,14 +90,18 @@ class LinkedList
     # ( value ) -> ( value ) -> ( value ) -> nil
     string = String.new
 
-    size.times do |index|
-      string << if index == size - 1
+    (size + 1).times do |index|
+      string << if index == size 
                   'nil'
                 else
                   "( #{at(index).value} ) -> "
                 end
     end
     string
+  end
+
+  def insert_at(value, index)
+
   end
 end
 
@@ -110,21 +114,23 @@ list.prepend('Sunny')
 list.prepend('Theo')
 list.append('Angelica')
 
-p list
-p list.size
-p list.tail
+# p list
+# p list.size
+# p list.tail
 
-list.size.times do |index|
-  p list.at(index)
-end
-p list
+# list.size.times do |index|
+#   p list.at(index)
+# end
+# p list
 
-p list.contains?('Theo')
-p list.contains?('Chloe')
+# p list.contains?('Theo')
+# p list.contains?('Chloe')
 
-p list.find('Angelica')
+# p list.find('Angelica')
+
+# p list.to_s
+
+# list.pop
+# p list
 
 p list.to_s
-
-list.pop
-p list

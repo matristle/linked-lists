@@ -84,8 +84,19 @@ class LinkedList
 
         return nil
     end
+    
+    def to_s
+        # ( value ) -> ( value ) -> ( value ) -> nil
+        string = String.new
 
-       
+        self.size.times do |index|
+            if index == self.size - 1
+                string << "nil"
+            else
+                string << "( #{self.at(index).value} ) -> "
+            end
+        end
+    end
 end
 
 list = LinkedList.new
@@ -97,18 +108,20 @@ list.append('Angelica')
 
 # p list
 
-p list.size
+# p list.size
 # p list.tail
 
 # list.size.times do |index| 
 #     p list.at(index)
 # end
 
-p list
+# p list
 
 # p list.contains?('Theo')
 # p list.contains?('Chloe')
 
-p list.find('Angelica')
+# p list.find('Angelica')
+
+p list.to_s
 
 

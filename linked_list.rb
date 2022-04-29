@@ -104,7 +104,13 @@ class LinkedList
     temp_node = at(index - 1)
     temp_node.next_node = Node.new(value, temp_node.next_node)
   end
-  
+
+  def remove_at(value, index)
+    previous_node = at(index - 1)
+    current_node = at(index)
+
+    previous_node.next_node = current_node.next_node
+  end
 end
 
 #---------------------------------------------------------

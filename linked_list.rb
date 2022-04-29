@@ -38,5 +38,15 @@ class LinkedList
         @head
     end
 
+    def tail
+        temp_node = @head
+        
+        until temp_node.next_node.nil? do
+            temp_node = temp_node.next_node
+        end
+
+        temp_node
+    end
+
     
 end

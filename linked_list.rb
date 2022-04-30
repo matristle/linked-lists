@@ -144,10 +144,16 @@ class LinkedList
       at_rec(index, temp_node, count)
     end
   end
-    
-    
 
-  
+  def pop_rec(temp_node = @head)
+
+    if temp_node.next_node.next_node.nil?
+      temp_node.next_node = nil
+    else 
+      pop_rec(temp_node.next_node)
+    end
+  end
+    
 end
 
 #---------------------------------------------------------
@@ -195,10 +201,20 @@ list.append_rec('Angelica')
 
 # p list.size_rec
 
-list.size_rec.times do |index|
-  p list.at_rec(index)
-end
+# list.size_rec.times do |index|
+#   p list.at_rec(index)
+# end
 # p list
+
+# p list
+
+list.pop_rec
+
+p list
+
+
+
+
 
 
 

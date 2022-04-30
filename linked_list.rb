@@ -170,6 +170,10 @@ class LinkedList
 
     to_s_rec(string, count += 1)
   end
+
+  # No recursion invited for #insert_at relative to the iterative implementation
+  # No recursion invited for #remove_at relative to the iterative implementation
+
 end
 
 #--Iterative method tests---------------------------------------------------
@@ -197,8 +201,8 @@ list.append('Angelica')
 
 # p list.to_s
 
-list.pop
-p list
+# list.pop
+# p list
 
 # p list.to_s
 

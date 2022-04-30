@@ -166,10 +166,19 @@ class LinkedList
 
     find_rec(value, temp_node.next_node, count += 1)
   end
- 
+
+  def to_s_rec(string = String.new, count = 0)
+    # ( value ) -> ( value ) -> ( value ) -> nil
+  
+      return string << 'nil' if count == size
+                        
+      string << "( #{at(count).value} ) -> "
+
+      to_s_rec(string, count += 1)
+  end
 end
 
-#---------------------------------------------------------
+#--Iterative method tests---------------------------------------------------
 
 list = LinkedList.new
 
@@ -205,29 +214,33 @@ list = LinkedList.new
 # list.remove_at('Bob', 2)
 # p list.to_s
 
+#-- Recursive method tests -----------------------------------------------------------
+
 list.prepend('Sally')
 list.prepend('Sunny')
 list.prepend('Theo')
 list.append_rec('Angelica')
 
-# p list
+p list
 
-# p list.size_rec
+p list.size_rec
 
-# list.size_rec.times do |index|
-#   p list.at_rec(index)
-# end
-# p list
+list.size_rec.times do |index|
+  p list.at_rec(index)
+end
+p list
 
-# p list
+p list
 
-# list.pop_rec
+list.pop_rec
 
-# p list
+p list
 
-# p list.contains_rec?('Carl')
+p list.contains_rec?('Carl')
 
-# p list.find_rec('Sunny')
+p list.find_rec('Sunny')
+
+p list.to_s_rec
 
 
 

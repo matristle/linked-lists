@@ -127,8 +127,7 @@ class LinkedList
   def size_rec(count = 0, temp_node = @head)
     return count if temp_node.nil?
     
-    count += 1
-    size_rec(count, temp_node.next_node)
+    size_rec(count += 1, temp_node.next_node)
   end
   
   # No recursion invited for #head
@@ -139,9 +138,8 @@ class LinkedList
     if count == index
       temp_node
     else 
-      count += 1
       temp_node = temp_node.next_node
-      at_rec(index, temp_node, count)
+      at_rec(index, temp_node, count += 1)
     end
   end
 
@@ -161,6 +159,8 @@ class LinkedList
 
     contains_rec?(value, temp_node.next_node)
   end
+
+  
     
 end
 
@@ -220,8 +220,9 @@ list.append_rec('Angelica')
 
 # p list
 
-p list.contains_rec?('coool')
+# p list.contains_rec?('Carl')
 
+p list.find_rec('Angelica')
 
 
 

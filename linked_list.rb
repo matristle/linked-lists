@@ -160,6 +160,14 @@ class LinkedList
     contains_rec?(value, temp_node.next_node)
   end
 
+  def find_rec(value, temp_node = @head, count = 0)
+    return count if temp_node.value == value
+    
+    return nil if temp_node.next_node.nil?
+
+    find_rec(value, temp_node.next_node, count += 1)
+  end
+
   
     
 end
@@ -222,7 +230,7 @@ list.append_rec('Angelica')
 
 # p list.contains_rec?('Carl')
 
-p list.find_rec('Angelica')
+p list.find_rec('Sunny')
 
 
 

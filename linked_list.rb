@@ -86,9 +86,8 @@ class LinkedList
     nil
   end
 
-  def to_s
+  def to_s(string = String.new)
     # ( value ) -> ( value ) -> ( value ) -> nil
-    string = String.new
 
     (size + 1).times do |index|
       string << if index == size
@@ -167,9 +166,7 @@ class LinkedList
 
     find_rec(value, temp_node.next_node, count += 1)
   end
-
-  
-    
+ 
 end
 
 #---------------------------------------------------------
@@ -230,7 +227,7 @@ list.append_rec('Angelica')
 
 # p list.contains_rec?('Carl')
 
-p list.find_rec('Sunny')
+# p list.find_rec('Sunny')
 
 
 

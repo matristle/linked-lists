@@ -229,10 +229,7 @@ list.size_rec.times do |index|
 end
 p list
 
-p list
-
 list.pop_rec
-
 p list
 
 p list.contains_rec?('Carl')
@@ -240,11 +237,3 @@ p list.contains_rec?('Carl')
 p list.find_rec('Sunny')
 
 p list.to_s_rec
-
-
-
-
-
-
-
-

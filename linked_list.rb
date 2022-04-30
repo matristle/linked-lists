@@ -112,21 +112,28 @@ class LinkedList
     previous_node.next_node = current_node.next_node
   end
 
-  # recursive methods
+  # recursive methods - alternative to the iterative methods above
 
   def append_rec(value, temp_node = @head)
-    # temp_node = @head
-
-    # temp_node = temp_node.next_node until temp_node.next_node.nil?
-
-    # temp_node.next_node = Node.new(value, nil)
-
     if temp_node.next_node.nil?
       temp_node.next_node = Node.new(value, nil)
     else
       append_rec(value, temp_node.next_node)
     end
   end
+
+  # No recursion invited for #prepend
+
+  def size_rec(count = 0, temp_node = @head)
+    return count if temp_node.nil?
+
+    count += 1
+    size_rec(count, temp_node.next_node)
+  end
+
+
+
+  
 end
 
 #---------------------------------------------------------
@@ -165,6 +172,11 @@ list = LinkedList.new
 # list.remove_at('Bob', 2)
 # p list.to_s
 
+list.prepend('Sally')
+list.prepend('Sunny')
+list.prepend('Theo')
 list.append_rec('Angelica')
 
 p list
+
+p list.size_rec

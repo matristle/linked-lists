@@ -122,13 +122,13 @@ class LinkedList
   end
 
   # No recursion invited for #prepend
-  
+
   def size_rec(count = 0, temp_node = @head)
     return count if temp_node.nil?
-    
+
     size_rec(count += 1, temp_node.next_node)
   end
-  
+
   # No recursion invited for #head
 
   # No recursion invited for #tail
@@ -136,14 +136,13 @@ class LinkedList
   def at_rec(index, temp_node = @head, count = 0)
     if count == index
       temp_node
-    else 
+    else
       temp_node = temp_node.next_node
       at_rec(index, temp_node, count += 1)
     end
   end
 
   def pop_rec(temp_node = @head)
-
     if temp_node.next_node.next_node.nil?
       temp_node.next_node = nil
     else 
@@ -161,7 +160,7 @@ class LinkedList
 
   def find_rec(value, temp_node = @head, count = 0)
     return count if temp_node.value == value
-    
+
     return nil if temp_node.next_node.nil?
 
     find_rec(value, temp_node.next_node, count += 1)
@@ -169,12 +168,12 @@ class LinkedList
 
   def to_s_rec(string = String.new, count = 0)
     # ( value ) -> ( value ) -> ( value ) -> nil
-  
-      return string << 'nil' if count == size
-                        
-      string << "( #{at(count).value} ) -> "
 
-      to_s_rec(string, count += 1)
+    return string << 'nil' if count == size
+
+    string << "( #{at(count).value} ) -> "
+
+    to_s_rec(string, count += 1)
   end
 end
 
@@ -241,8 +240,6 @@ p list.contains_rec?('Carl')
 p list.find_rec('Sunny')
 
 p list.to_s_rec
-
-
 
 
 

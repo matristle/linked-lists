@@ -123,15 +123,29 @@ class LinkedList
   end
 
   # No recursion invited for #prepend
-
+  
   def size_rec(count = 0, temp_node = @head)
     return count if temp_node.nil?
-
+    
     count += 1
     size_rec(count, temp_node.next_node)
   end
+  
+  # No recursion invited for #head
 
+  # No recursion invited for #tail
 
+  def at_rec(index, temp_node = @head, count = 0)
+    if count == index
+      temp_node
+    else 
+      count += 1
+      temp_node = temp_node.next_node
+      at_rec(index, temp_node, count)
+    end
+  end
+    
+    
 
   
 end
@@ -177,6 +191,16 @@ list.prepend('Sunny')
 list.prepend('Theo')
 list.append_rec('Angelica')
 
-p list
+# p list
 
-p list.size_rec
+# p list.size_rec
+
+list.size_rec.times do |index|
+  p list.at_rec(index)
+end
+# p list
+
+
+
+
+

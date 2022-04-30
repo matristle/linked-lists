@@ -153,6 +153,14 @@ class LinkedList
       pop_rec(temp_node.next_node)
     end
   end
+
+  def contains_rec?(value, temp_node = @head)
+    return true if temp_node.value == value
+
+    return false if temp_node.next_node.nil?
+
+    contains_rec?(value, temp_node.next_node)
+  end
     
 end
 
@@ -208,9 +216,13 @@ list.append_rec('Angelica')
 
 # p list
 
-list.pop_rec
+# list.pop_rec
 
-p list
+# p list
+
+p list.contains_rec?('coool')
+
+
 
 
 

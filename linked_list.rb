@@ -54,13 +54,8 @@ class LinkedList
 
   def pop
     temp_node = @head
-    until temp_node.next_node.next_node.nil?
-      temp_node = temp_node.next_node
-      if temp_node.next_node.next_node.nil?
-        temp_node.next_node = nil
-        break
-      end
-    end
+    temp_node = temp_node.next_node until temp_node.next_node.next_node.nil?
+    temp_node.next_node = nil
   end
 
   def contains?(value)
@@ -181,10 +176,10 @@ end
 
 list = LinkedList.new
 
-# list.prepend('Sally')
-# list.prepend('Sunny')
-# list.prepend('Theo')
-# list.append('Angelica')
+list.prepend('Sally')
+list.prepend('Sunny')
+list.prepend('Theo')
+list.append('Angelica')
 
 # p list
 # p list.size
@@ -202,8 +197,8 @@ list = LinkedList.new
 
 # p list.to_s
 
-# list.pop
-# p list
+list.pop
+p list
 
 # p list.to_s
 
@@ -215,25 +210,25 @@ list = LinkedList.new
 
 #-- Recursive method tests -----------------------------------------------------------
 
-list.prepend('Sally')
-list.prepend('Sunny')
-list.prepend('Theo')
-list.append_rec('Angelica')
+# list.prepend('Sally')
+# list.prepend('Sunny')
+# list.prepend('Theo')
+# list.append_rec('Angelica')
 
-p list
+# p list
 
-p list.size_rec
+# p list.size_rec
 
-list.size_rec.times do |index|
-  p list.at_rec(index)
-end
-p list
+# list.size_rec.times do |index|
+#   p list.at_rec(index)
+# end
+# p list
 
-list.pop_rec
-p list
+# list.pop_rec
+# p list
 
-p list.contains_rec?('Carl')
+# p list.contains_rec?('Carl')
 
-p list.find_rec('Sunny')
+# p list.find_rec('Sunny')
 
-p list.to_s_rec
+# p list.to_s_rec

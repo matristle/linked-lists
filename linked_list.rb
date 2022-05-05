@@ -178,12 +178,12 @@ end
 
 #--Iterative method tests---------------------------------------------------
 
-list = LinkedList.new
+# list = LinkedList.new
 
-list.prepend('Sally')
-list.prepend('Sunny')
-list.prepend('Theo')
-list.append('Angelica')
+# list.prepend('Sally')
+# list.prepend('Sunny')
+# list.prepend('Theo')
+# list.append('Angelica')
 
 # p list
 # p list.size
@@ -214,10 +214,12 @@ list.append('Angelica')
 
 #-- Recursive method tests -----------------------------------------------------------
 
-# list.prepend('Sally')
-# list.prepend('Sunny')
-# list.prepend('Theo')
-# list.append_rec('Angelica')
+list = LinkedList.new
+
+list.prepend('Sally')
+list.prepend('Sunny')
+list.prepend('Theo')
+list.append_rec('Angelica')
 
 # p list
 
@@ -228,8 +230,8 @@ list.append('Angelica')
 # end
 # p list
 
-# list.pop_rec
-# p list
+list.pop_rec
+p list
 
 # p list.contains_rec?('Carl')
 
